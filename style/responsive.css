@@ -1,0 +1,161 @@
+/* Untuk layar kecil seperti ponsel */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column; /* Ubah menu navigasi menjadi kolom */
+        gap: 10px; /* Kurangi jarak antar menu */
+    }
+
+    #hero {
+        flex-direction: column-reverse; /* Ubah tata letak hero menjadi kolom terbalik untuk fokus teks di atas */
+        text-align: center; /* Teks rata tengah */
+    }
+
+    .hero-right {
+        margin-top: 20px; /* Tambahkan jarak atas untuk memberikan ruang antara elemen */
+        width: 200px; /* Perkecil ukuran elemen hero kanan agar proporsional */
+        height: 200px; 
+    }
+
+    .hero-left {
+        margin-left: 90px; /* Sesuaikan posisi elemen kiri untuk keindahan */
+        margin-top: 50px; /* Tambahkan jarak atas pada elemen kiri */
+    }
+
+    .download-button {
+        padding: 8px 15px; /* Kurangi padding untuk menyesuaikan tombol dengan layar kecil */
+        font-size: 0.9rem; /* Kurangi ukuran font agar tetap terbaca pada layar kecil */
+    }
+
+    .skill-icons {
+        gap: 15px; /* Kurangi jarak antar ikon untuk efisiensi ruang */
+    }
+
+    .skill-icons img {
+        width: 60px; /* Kurangi ukuran ikon agar proporsional dengan layar kecil */
+        height: 60px;
+    }
+
+    .project-container {
+        flex-direction: column; /* Ubah tata letak proyek menjadi vertikal agar sesuai dengan layar kecil */
+    }
+
+    .project {
+        text-align: center; /* Teks proyek rata tengah untuk tampilan yang simetris */
+        padding: 20px; /* Kurangi padding */
+    }
+
+    .project-image {
+        width: 200px; /* Perkecil ukuran gambar proyek */
+        height: 200px;
+        margin-bottom: 10px; /* Tambahkan jarak bawah agar tampak teratur */
+    }
+
+    .project-content {
+        margin-left: 0; /* Hilangkan margin kiri untuk tata letak vertikal */
+    }
+
+    footer {
+        padding: 10px; /* Kurangi padding untuk efisiensi ruang */
+        text-align: center; /* Teks rata tengah */
+    }
+
+    .social-icons {
+        justify-content: center; /* Ikon media sosial rata tengah */
+        gap: 10px; /* Kurangi jarak antar ikon */
+    }
+
+    .form-section {
+        display: flex; /* Gunakan flexbox untuk pengaturan tata letak yang fleksibel */
+    }
+
+    .buttonn {
+        display: flex;  /* Terapkan tata letak fleksibel pada tombol */
+    }
+
+    .container {
+        flex-direction: column; /* Ubah tata letak container menjadi vertikal */
+    } 
+}
+
+
+/* Untuk tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav ul {
+        gap: 15px; /* Kurangi jarak antar menu */
+    }
+
+    .hero-right {
+        width: 220px; /* Kurangi ukuran lingkaran */
+        height: 220px;
+    }
+
+    .project {
+        flex-direction: row; /* Tata letak proyek tetap horizontal */
+        padding: 30px; /* Kurangi padding */
+    }
+
+    .project-content {
+        margin-left: 10px; /* Kurangi margin kiri */
+    }
+
+    .skill-icons img {
+        width: 70px; /* Kurangi ukuran ikon */
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tampilkan tombol burger menu pada layar kecil */
+    .burger-menu {
+      display: block; /* Tampilkan tombol burger pada layar kecil */
+    }
+
+     /* Saat tombol burger menu memiliki kelas "active", garis pertama berubah menjadi miring */
+    .burger-menu.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); /* Membuat garis miring ke kanan */
+    }
+  
+    /* Saat tombol burger menu memiliki kelas "active", garis kedua menjadi transparan */
+    .burger-menu.active .line:nth-child(2) {
+      opacity: 0; /* Hilangkan garis tengah */
+      margin-bottom: -4px; /* Sesuaikan jarak agar bentuk ikon terlihat simetris */
+  
+    }
+  
+    /* Saat tombol burger menu memiliki kelas "active", garis ketiga berubah menjadi miring */
+    .burger-menu.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px); /* Membuat garis miring ke kiri */
+    }
+  
+    /* Menu navigasi (nav-menu) di layar kecil */
+    .nav-menu {
+      margin-top: 30px;
+      display: none; /* Sembunyikan menu secara default */
+      flex-direction: column; /* Atur menu menjadi kolom */
+      background-color: var(--thirdbgcolor); /* Warna latar belakang sesuai variabel CSS */
+      padding: 10px; /* Beri ruang di dalam menu */
+      position: absolute; /* Posisi absolut untuk mengambang di halaman */
+      top: 60px; /* Jarak dari atas */
+      right: 10px; /* Jarak dari kanan */
+      width: 90px; /* Lebar menu */
+      border-radius: 5px; /* Membuat sudut membulat */
+      z-index: 999; /* Supaya di atas elemen lain */
+    }
+  
+    /* Ketika menu navigasi memiliki kelas "active" */
+    .nav-menu.active {
+      display: flex; /* Tampilkan menu saat active */
+      animation: fadeIn 0.3s ease; /* Tambahkan animasi muncul */
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0; /* Menu tidak terlihat di awal */
+        transform: translateY(-10px); /* Mulai dari posisi sedikit di atas */
+      }
+      to {
+        opacity: 1; /* Menu menjadi terlihat sepenuhnya */
+        transform: translateY(0); /* Menu kembali ke posisi semula */
+      }
+    }
+  }

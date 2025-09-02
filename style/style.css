@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+    --backgroundprimarcolor: #EFC9D6; /* background */
+    --secondbackgroundcolor: #F4E0EA; /* slice */
+    --thirdbgcolor: #FFA6CA; /* nav and footer */
+    --primercolor: #EE80A7; /* title and icon background */
+    --mencolok: #FF5AAC; /* nav text and general text */
+}
+
+* {
+    margin: 0; /* Menghilangkan margin bawaan browser */
+    padding: 0;  /* Menghilangkan padding bawaan browser */
+    box-sizing: border-box; /* Mengatur ukuran elemen agar menyertakan padding dan border */
+}
+
+/* Mengatur gaya dasar body */
+body { 
+    background-color: var(--backgroundprimarcolor); /* warna background */
+    font-family: "Poppins", sans-serif;  /* font yang digunakan */
+}
+
+/* Gaya untuk heading dan teks bold */
+h1, h2, h3, h4, h5, h6, strong {
+    color: var(--mencolok); /* warna teks heading */
+}
+
+p {
+    font-size: 1rem; /* ukuran font paragraf */ 
+    line-height: 1.9rem; /* jarak antar baris */
+}
+
+/* Teks biasa */
+p, span, label, input, textarea, li {
+    color: var(--mencolok); /* warna font */
+}
+
+a {
+    text-decoration: none; /* Menghapus underline pada tautan */ 
+}
+
+/* mengatur lebar maksimum container utama (nav) */
+.main-container {
+    width: 90%; /* lebar nav */
+    max-width: 1200px; /* Batas maksimum lebar */
+    margin: 0 auto; /* Pusatkan kontainer secara horizontal */
+}
+
+/* Titles */
+.pre-title {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;  /* jarak antar huruf */
+    color: var(--primercolor); /* warna teks */
+    position: relative; /* Untuk menempatkan elemen garis */
+    padding-left: 40px; /* Spasi kiri */
+    width: fit-content; /* Lebar sesuai konten */
+    font-weight: 400; /* ketebalan teks */
+    font-size: 0.9rem; /* Ukuran teks */
+}
+
+/* Garis kecil sebelum teks pre-title */
+.pre-title::before {
+    content: ""; /* Elemen kosong sebagai garis */
+    width: 30px; /* Panjang garis */
+    height: 1px; /* Ketebalan garis */
+    background: var(--primercolor); /* Warna garis */
+    position: absolute; /* Posisi relatif terhadap pre-title */
+    left: 0; /* Tempatkan di kiri */
+    top: 50%; /* Tempatkan di tengah vertikal */
+}
+
+/* Logo and Navigation Menu */
+.nav {
+    display: flex; /* Mengatur elemen navbar dalam satu baris */
+    justify-content: space-between; /* space antar elemen */
+    padding: 2rem 0; /* Memberikan ruang atas dan bawah */
+  }
+
+.nav ul {
+    list-style: none; /* menghilangkan bullet list */
+    display: flex;  /* Tampilkan menu dalam satu baris */
+    gap: 1rem; /* jarak antar item */
+}
+
+.logo {
+    font-weight: 700; /* ketebalan teks */
+    font-size: 2rem;  /* Ukuran font */
+}
+
+.logo a {
+    color: var(--mencolok); /* warna teks logo */
+}
+
+/* gaya item menu di navbar */
+nav ul li {
+    display: flex; /* Membuat item menu sejajar vertikal */
+    align-items: center; /* Sejajarkan elemen di tengah */
+}
+
+nav ul li a {
+    color: var(--mencolok); /* warna tautan menu */
+}
+
+/* Hover untuk menu */
+nav a:hover, 
+nav a:active {
+    color: var(--secondbackgroundcolor); /* warna saat di-hover */
+    border-bottom: 3px solid var(--secondbackgroundcolor); /* underline saat di-hover */
+} 
+.nav-menu {
+  display: flex; /* Default untuk desktop */
+}
+
+.burger-menu {
+  display: none; /* Sembunyikan tombol burger pada desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000; /* Supaya tombol selalu di atas */
+  position: relative;
+}
+
+.burger-menu .line {
+  width: 30px;
+  height: 4px;
+  background-color: var(--mencolok);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+
+/* title */
+
+.judul {
+    text-align: center; /* Mengatur teks di dalamnya agar rata tengah */
+    padding: 30px; /* Memberikan ruang dalam di semua sisi sebesar 30px */
+    margin: 20px; /* Memberikan jarak luar (margin) sebesar 20px */
+}
+
+h1 {
+    font-size: 3rem; /* Ukuran font */
+    color: var(--primercolor); /* warna judul */
+    margin: 0; /* Menghapus jarak luar di sekeliling elemen */
+    box-shadow: var(--mencolok); /* Mengatur efek bayangan dengan warna mencolok */
+}
+
+h2 {
+    font-size: 3rem; /* Ukuran font */
+    color: var(--primercolor); /* Warna teks menggunakan warna utama */
+    margin: 0; /* Menghapus jarak luar di sekeliling elemen */
+}
+
+h4 {
+    margin: 10px; /* Memberikan jarak luar sebesar 10px di sekeliling elemen */
+}
+
+/* Hero Section */
+#hero {
+    display: flex;  /* Elemen ditampilkan sejajar */
+    align-items: center; /* Sejajarkan vertikal elemen di tengah */
+    justify-content: space-between; /* Spasi antar elemen */
+    margin-top: 100px; /* spasi bawah header */
+    padding: 60px 20px; /* Ruang dalam hero section */
+}
+
+/* Bagian kiri Hero Section */
+.hero-left {
+    max-width: 60%;  /* Lebar maksimum bagian kiri */
+}
+
+/* Bagian teks dengan warna highlight */
+.hero-name span {
+    color: #FF5AAC; 
+}
+
+/* Bagian kanan Hero Section */
+.hero-right {
+    width: 250px; /* Lebar lingkaran */
+    height: 230px; /* Tinggi lingkaran */
+    border-radius: 50%; /* bentuk lingkaran */
+    overflow: hidden; /* Potong konten yang melebihi lingkaran */
+    border: 5px solid var(--primercolor); /* warna dan tebal border lingkaran */
+    flex-shrink: 0; /* agar ukuran elemen tidak menyusut */
+    background-color: var(--primercolor); /* Warna latar belakang */
+}
+
+/* Tombol download */
+.download-button {
+    display: inline-block; /* Tampilkan tombol seperti blok */
+    margin-top: 20px; /* Spasi atas */
+    padding: 10px 20px; /* Ruang dalam tombol */
+    background-color: var(--thirdbgcolor); /* Warna latar belakang tombol */
+    color: var(--mencolok); /* warna teks tombol */
+    text-decoration: none; /* Hilangkan underline */
+    border-radius: 5px; /* Membuat sudut membulat */
+    font-weight: bold; /* Teks tebal */
+    text-align: center; /* Teks rata tengah */
+}
+
+/* Efek hover tombol download */
+.download-button:hover {
+  box-shadow: var(--thirdbgcolor) 0px 3px 5px; /* Tambahkan bayangan */
+  text-shadow: 0 0 25px #fff; /* Tambahkan efek cahaya */ 
+}
+
+/* Mengatur gambar di Hero Section */
+.image-content img {
+    max-width: 100%; /* Mengatur lebar gambar agar tidak lebih besar dari kontainer */
+    max-height: 100%; /* Mengatur tinggi gambar agar tidak lebih tinggi dari kontainer */
+    object-fit: 0; /* Menjaga gambar agar sesuai dengan kontainer tanpa distorsi */
+}
+
+
+/* Skills Section */
+#skills {
+    text-align: center; /* Teks rata tengah */
+    padding: 60px 20px;  /* Ruang dalam */
+    margin: 30px; /* Margin luar */
+}
+
+#skills h2 {
+    font-size: 32px;  /* Ukuran font judul */
+    color: var(--primercolor); /* warna judul */
+}
+
+#skills p {
+    margin-bottom: 20px; /* spasi bawah */
+    color: var(--mencolok); /* warna teks */
+}
+
+/* Gaya ikon skill */
+.skill-icons {
+    display: flex; /* Tata letak baris */
+    flex-wrap: wrap; /* Baris baru jika elemen meluap */
+    justify-content: center; /* Rata tengah */
+    gap: 20px; /* Jarak antar ikon */
+    margin-top: 20px; /* spasi atas */
+}
+
+.skill-icons img {
+    width: 80px;  /* Lebar ikon */
+    height: 80px; /* Tinggi ikon */
+    background-color: var(--primercolor); /* latar icon */
+    padding: 10px; /* Ruang dalam ikon */
+    border-radius: 50%; /* bentuk lingkaran */
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* icon github, ig, link */
+i {
+    font-size: 2rem;
+    color: #E1306C; 
+    margin-top: auto;
+}
+
+/* Project Area */
+  .project-section {
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  h6 {
+    color: var(--primercolor); /* Mengatur warna teks heading proyek */
+    font-size: 2rem;  /* Ukuran font untuk heading proyek */
+    margin-bottom: 10px; /* Memberikan jarak bawah sebesar 10px */
+  }
+
+/* Container proyek */
+  .project-container {
+    display: flex; /* Menampilkan elemen proyek dalam satu baris */
+    flex-direction: column; /* Menata elemen secara vertikal */
+    gap: 20px; /* Memberikan jarak antar elemen proyek */
+    text-align: center;
+    align-items: center;
+  }
+
+  .project {
+    background-color: var(--secondbackgroundcolor); /* Memberikan latar belakang warna kedua */
+    padding: 40px; /* Memberikan ruang dalam sebesar 40px */
+    border-radius: 10px; /* Memberikan sudut membulat */
+    display: flex; /* Menampilkan elemen secara horizontal */
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+    justify-content: space-between; /* Memberikan spasi antar elemen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Memberikan bayangan halus pada proyek */
+    margin: 20px auto;
+    max-width: 800px;
+  }
+
+  .project:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .project-image {
+    width: 250px; /* Menentukan lebar gambar proyek */
+    height: 250px;  /* Menentukan tinggi gambar proyek */
+    overflow: hidden; /* Menyembunyikan bagian gambar yang melampaui batas */
+    flex-shrink: 0; /* Mencegah gambar menyusut */
+    position: relative;
+  }
+
+  .project-image img {
+    width: 100%; /* Mengatur lebar gambar agar sesuai dengan kontainer */
+    height: 100%; /* Mengatur tinggi gambar agar sesuai dengan kontainer */
+    object-fit: contain; /* Menjaga gambar tetap proporsional */
+  }
+
+  .project-content {
+    flex: 1; /* Memberikan ruang lebih banyak untuk konten proyek */
+    margin-left: 20px; /* Memberikan jarak kiri pada konten */
+    color: var(--mencolok); /* Memberikan warna teks konten dengan warna mencolok */
+  }
+
+  .project-content h3 {
+    color: var(--primercolor); /* Mengatur warna judul proyek sesuai variabel primer */
+    font-size: 1.5em; /* Ukuran font judul proyek */
+    margin-bottom: 10px; /* Memberikan jarak bawah */
+  }
+
+  .project-content p {
+    font-size: 1em; /* Ukuran font deskripsi proyek */
+    line-height: 1.5; /* Jarak antar baris dalam deskripsi proyek */
+    color: var(--mencolok); /* Mengatur warna teks deskripsi dengan warna mencolok */
+  }
+
+  .see-project-button {
+    display: inline-block; /* Menampilkan tombol seperti elemen blok inline */
+    margin-top: 10px; /* Memberikan jarak atas */
+    padding: 10px 20px; /* Memberikan ruang dalam tombol */
+    background-color: var(--primercolor); /* Memberikan warna latar belakang */
+    color: #fff; /* Warna teks putih untuk tombol */
+    border-radius: 5px; /* Membuat sudut tombol membulat */
+    text-decoration: none; /* Menghilangkan underline pada tombol */
+    font-weight: bold; /* Memberikan teks tebal pada tombol */
+    margin: 10px; /* Memberikan jarak sekitar tombol */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .see-project-button:hover {
+    background-color: var(--primercolor); /* Memberikan warna latar belakang saat tombol di-hover */
+    box-shadow: var(--thirdbgcolor) 0px 3px 5px; /* Menambahkan bayangan pada tombol saat di-hover */
+    transform: scale(1.2);
+  }
+  
+  /* Main Container */
+  .container {
+    display: flex; /* Mengatur elemen dalam kontainer menggunakan flexbox untuk tata letak fleksibel */
+    flex-direction: row; /* Menyusun elemen anak secara horizontal */
+    background-color: var(--secondbackgroundcolor); /* Memberikan latar belakang sesuai variabel warna kedua */
+    border-radius: 10px; /* Membuat sudut kontainer menjadi melengkung */
+    margin-left: 2.8rem; /* Memberikan jarak kiri sebesar 2.8rem */
+    padding: 2.5rem; /* Memberikan ruang dalam sebesar 2.5rem di semua sisi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan untuk estetika */
+    max-width: 847px; /* Membatasi lebar maksimum kontainer */
+    width: 90%; /* Menyesuaikan lebar kontainer menjadi 90% dari elemen induk */
+    gap: 20px; /* Memberikan jarak antar elemen anak */
+    margin: auto; /* Memusatkan kontainer secara horizontal */
+    margin-top: 10px; /* Memberikan jarak atas sebesar 10px */
+  }
+  
+  /* Form Section */
+  .form-section {
+    flex: 1; /* Mengatur proporsi elemen ini agar mengambil ruang yang tersedia 
+                 membagi ruang tersebut secara merata dengan komponen lain */
+    display: flex; /* Mengatur tampilan, posisi, dan layout konten yang ukurannya belum diketahui atau 
+                      bernilai dinamis.*/
+    flex-direction: column; /* Mengubah arah baris atau kolom dari elemen flex menjadi vertikal. Arah 
+                              default dari flex container adalah horizontal.*/
+    gap: 1rem; /* Memberikan jarak antar elemen anak sebesar 1rem */
+  }
+  
+  .input-box, .textarea-box {
+    margin: 5px;  /* Memberikan jarak luar sebesar 5px */
+    border: 2px solid var(--primercolor); /* Menambahkan border dengan warna primer */
+    width: 350px; /* Lebar input dan textarea */
+    border-radius: 10px; /* Membuat sudut elemen melengkung */
+    padding: 10px; /* Memberikan ruang dalam sebesar 10px */
+    font-size: 16px; /* Ukuran font */
+    background-color: var(--secondbackgroundcolor); /* Latar belakang */
+    outline: none; /* Menghilangkan outline default */
+  }
+
+  .form-actionn input::placeholder,
+  .form-actionn textarea::placeholder {
+    color: var(--mencolok); /* Memberikan warna placeholder sesuai variabel mencolok */
+  }
+  
+  .textarea-box {
+    resize: none; /* Mencegah pengguna mengubah ukuran textarea */
+    height: 150px; /* Tinggi textarea */
+  }
+
+  .buttonn {
+    display: inline-block;  /* Mengatur elemen tombol menjadi blok inline */
+    margin-top: 20px; /* Memberikan jarak atas sebesar 20px */
+    padding: 10px 20px; /* Memberikan ruang dalam tombol */
+    background-color: var(--thirdbgcolor); /* Latar belakang tombol dengan warna ketiga */
+    color: #fff; /* Warna teks putih */
+    text-decoration: none; /* Menghilangkan garis bawah pada teks */
+    border-radius: 5px; /* Membuat sudut tombol melengkung */
+    font-weight: bold; /* Menebalkan teks tombol */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    border: none; /* Menghilangkan border default */
+    margin-left: 5px; /* Memberikan jarak kiri */
+  }
+
+  .buttonn:hover {
+    box-shadow: var(--thirdbgcolor) 0px 3px 5px; /* Memberikan bayangan tombol saat di-hover */
+}
+ 
+  
+  /* Image Section */
+  .image-section  {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: center; /* Menyelaraskan elemen gambar di tengah */
+    margin-left: 1rem; /* Memberikan jarak kiri sebesar 1rem */
+    margin-right: 1rem; /* Memberikan jarak kanan sebesar 1rem */
+  }
+  
+/* footer */
+#footer {
+  text-align: center; /* Menyusun teks di tengah footer */
+  color: #fff; /* Mengatur warna teks menjadi putih */
+  background: scroll; /* Menambahkan latar belakang dengan efek scroll (tampilan bergulir) */
+  margin: 36px; /* Memberikan jarak luar sebesar 36px pada footer */
+  margin-bottom: -25rem; /* Memberikan jarak bawah negatif untuk menyesuaikan posisi footer */
+}
+
+.footer-title {
+  font-size: 20px; /* Ukuran font untuk judul footer */
+  font-weight: bold; /* Memberikan ketebalan teks */
+  margin-bottom: 20px; /* Memberikan jarak bawah */
+  color: var(--primercolor); 
+}
+
+.social-icons {
+  display: flex; /* Menggunakan flexbox untuk ikon sosial */
+  justify-content: center; /* Menyelaraskan ikon di tengah */
+  gap: 20px; /* Memberikan jarak antar ikon */
+  margin-bottom: 20px; /* Memberikan jarak bawah sebesar 20px */
+}
+
+#contactme h5 {
+  margin-top: 5.5rem;
+  font-size: 2rem; /* Ukuran font untuk teks kontak */
+  color: var(--primercolor); /* Warna teks sesuai warna primer */
+  text-align: center; /* Menyelaraskan teks di tengah */
+}
+
